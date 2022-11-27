@@ -1,0 +1,62 @@
+import random
+
+count = 1
+
+total = 0
+
+match = 0
+
+matching = 0
+
+print("="*20)
+print(" 숫자 맞추기 게임")
+print("="*20)
+print()
+
+choose = input("몇번 게임을 하실건가요? : ")
+print("\n")
+
+for i in range(int(choose)):
+    a = random.randint(1, 100)
+    match += 1
+    print("%d번째 게임을 시작합니다. \n" % match)
+
+    while True:
+
+        b = int(input("1~100 사이의 숫자를 입력하시오 : "))
+        total += 1
+
+        if b > 101:
+            print("숫자를 다시 입력 해주세요. \n")
+            continue
+
+        if a == b:
+            print("True!")
+            print("시도 횟수 : %d \n" % count)
+
+            print("========== 정답 ==========")
+            print("%d번 만에 맞췄습니다." % count)
+            print("="*20)
+
+            print("총 시도 횟수 : %d" % total)
+            print("="*20)
+
+            matching += 1
+            print("총 맞춘 문제 수 : %d" % matching)
+
+            print("="*20)
+            count = 1
+            break
+
+        elif a > b:
+            print("UP")
+        elif a < b:
+            print("DOWN")
+
+        print("시도 횟수 : %d \n" % count)
+        count += 1
+
+
+print("문제당 평균 시도 횟수 =", total/int(choose))
+print("\n")
+print("게임을 종료합니다.")
