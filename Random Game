@@ -58,5 +58,4 @@ for i in range(int(choose)):
 
 
 print("문제당 평균 시도 횟수 =", total/int(choose))
-print("\n")
 print("게임을 종료합니다.")
